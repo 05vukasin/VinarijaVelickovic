@@ -507,6 +507,8 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
   color: white;
   border: 2px solid #cda45e;
+  height:40px;
+  margin-top: 5px;
 }
 
 #hero .btn-menu:hover, #hero .btn-book:hover {
