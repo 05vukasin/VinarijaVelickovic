@@ -276,3 +276,79 @@
   });
 
 })()
+
+
+/**slanje mejlova----------------- */
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Inicijalizacija EmailJS
+  emailjs.init("MMNlSWtzgi-mK2FEl"); // Zamenite sa vašim EmailJS Public Key
+
+  // Funkcija za slanje mejla
+  window.sendEmail = function() {
+    // Prikupljanje podataka iz forme
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+
+    // Kombinovanje svih podataka u jednu poruku
+    const combinedMessage = `
+      Ime: ${name}
+      Email: ${email}
+      Tema: ${subject}
+      Poruka: ${message}
+    `;
+
+    // Provera podataka iz forme
+    console.log("Poruka:", combinedMessage);
+
+    // Parametri za EmailJS
+    const templateParams = {
+      message: combinedMessage
+    };
+
+    emailjs.send("service_y9h54vf","template_iolk4g8", templateParams)
+      .then(function(response) {
+        // Prikazivanje poruke o uspešnom slanju
+        alert('Vaša poruka je uspešno poslata. Hvala vam!');
+
+        // Resetovanje forme
+        document.getElementById('contact-form').reset();
+      }, function(error) {
+        // Prikazivanje poruke o grešci
+        alert('Slanje poruke nije uspelo. Molimo pokušajte ponovo kasnije.');
+      });
+  };
+});
+
+/**-----EmailJs------------------------------------------------ */
+const btn = document.getElementById('button');
+
+document.getElementById('contact-form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.textContent = 'Slanje...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_vjh4uin';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.textContent = 'Pošalji';
+      alert('Poslato!');
+    }, (err) => {
+      btn.textContent = 'Pošalji';
+      alert(JSON.stringify(err));
+    });
+});
+
+/**meni-------- */
+
+
+function expandText(element) {
+  const menuItem = element.closest('.menu-item');
+  menuItem.classList.toggle('expanded');
+}
+

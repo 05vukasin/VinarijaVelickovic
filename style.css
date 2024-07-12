@@ -1561,6 +1561,10 @@ section {
 .contact .php-email-form button[type="submit"]:hover {
   background: #d3af71;
 }
+.loading, .error-message, .sent-message {
+  display: none;
+}
+
 
 @-webkit-keyframes animate-loading {
   0% {
@@ -1733,3 +1737,75 @@ section {
   font-size: 13px;
   color: #fff;
 }
+
+/*forma za mejl--------------------------*/
+
+.field {
+  margin-bottom: 10px;
+}
+
+.field label {
+  display: block;
+  font-size: 20px;
+  color: #fff;
+}
+
+.field input {
+  display: block;
+  width: 80%;
+  min-width: 250px;
+  line-height: 1.5;
+  font-size: 16px;
+  border: #d3af71 solid 2px;
+  background-color: #1d1b16;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.poruka {
+  width: 80%;
+  min-width: 250px;
+  line-height: 1.5;
+  font-size: 16px;
+  border: #d3af71 solid 2px;
+  background-color: #1d1b16;
+  border-radius: 5px;
+  color: #fff;
+  height: 250px;
+  padding: 10px;
+  box-sizing: border-box;
+  resize: vertical;
+  overflow-y: auto; /* Dopušta vertikalno pomeranje */
+  white-space: pre-wrap; /* Osigurava prelamanje teksta */
+}
+
+input[type="submit"] {
+  background: #cda45e;
+  border: 0;
+  padding: 10px 35px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+/*meni------*/
+
+
+
+/*.expand-text {
+  position: absolute;
+  bottom: 0px;
+  right: 40px;
+  cursor: pointer;
+  color: #d3af71;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.expand-text::after {
+  content: 'Više...';
+}
+
+.expand-text.expanded::after {
+  content: '';
+}*/

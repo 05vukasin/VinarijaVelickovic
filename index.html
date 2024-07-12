@@ -69,13 +69,12 @@
           <li><a class="nav-link scrollto active" href="#hero">Početna</a></li>
           <li><a class="nav-link scrollto" href="#about">O Nama</a></li>
           <li><a class="nav-link scrollto" href="#menu">Vina</a></li>
-          <li><a class="nav-link scrollto" href="#events">Proslave</a></li>
-          <li><a class="nav-link scrollto" href="#gallery">Lokacije</a></li>
+          <li><a class="nav-link scrollto" href="#events">Posete i Degustacije</a></li>
           <li><a class="nav-link scrollto" href="#contact">Kontakt</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-      <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Rezervacija</a>
+      <a href="#contact" class="book-a-table-btn scrollto d-none d-lg-flex">Lokacija</a>
 
     </div>
   </header><!-- End Header -->
@@ -90,7 +89,7 @@
 
           <div class="btns">
             <a href="#menu" class="btn-menu animated fadeInUp scrollto">PRODAVNICA</a>
-            <a href="#book-a-table" class="btn-book animated fadeInUp scrollto"><P>POSETE I DEGUSTACIJE</P></a>
+            <a href="#events" class="btn-book animated fadeInUp scrollto"><P>POSETE I DEGUSTACIJE</P></a>
           </div>
         </div>
         <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
@@ -250,6 +249,12 @@ su crveni grejpfrut, pa čak i nar, i na kraju začinsko bilje.<br>
 Uparivanje sa hranom:
             </div>
           </div>
+          
+          
+            
+          
+          
+          
 
           <div class="col-lg-6 menu-item filter-salads">
             <img src="img/menu/chardonnay.jpg" class="menu-img" alt="">
@@ -445,7 +450,7 @@ Uparivanje sa hranom:
       </div>
     </section><!-- End Events Section -->
 
-    <!-- ======= Book A Table Section ======= -->
+    <!-- ======= Book A Table Section ======= 
     <section id="book-a-table" class="book-a-table">
       <div class="container" data-aos="fade-up">
 
@@ -494,10 +499,10 @@ Uparivanje sa hranom:
         </form>
 
       </div>
-    </section><!-- End Book A Table Section -->
+    </section> End Book A Table Section -->
 
     
-    <!-- ======= Gallery Section ======= -->
+    <!-- ======= Gallery Section ======= 
     <section id="gallery" class="gallery">
 
       <div class="container" data-aos="fade-up">
@@ -578,7 +583,7 @@ Uparivanje sa hranom:
         </div>
 
       </div>
-    </section> <!-- End Gallery Section -->
+    </section>  End Gallery Section -->
   
     
     <!-- ======= Contact Section ======= -->
@@ -603,14 +608,14 @@ Uparivanje sa hranom:
             <div class="info">
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
+                <h4>Lokacija:</h4>
                 <p>
                   Banja BB, Aranđelovac</p>
               </div>
 
               <div class="open-hours">
                 <i class="bi bi-clock"></i>
-                <h4>Open Hours:</h4>
+                <h4>Radno Vreme:</h4>
                 <p>
                   Subota-Nedelja:<br>
                   12:00h - 19:00h
@@ -625,7 +630,7 @@ Uparivanje sa hranom:
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
+                <h4>Telefon:</h4>
                 <p>+381 (0)62 89-84-840</p>
               </div>
 
@@ -635,28 +640,27 @@ Uparivanje sa hranom:
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+            
+            
+              <form id="contact-form" role="form" class="php-email-form">
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                  </div>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <input type="email" class="form-control dugme" name="email" id="email" placeholder="Your Email" required>
+                  </div>
                 </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                <div class="form-group mt-3">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
                 </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="8" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Pošalji</button></div>
-            </form>
+                <div class="form-group mt-3">
+                  <textarea class="form-control" name="message" rows="8" placeholder="Message" required></textarea>
+                </div>
+                <div class="text-center">
+                  <button id="button" type="submit">Pošalji</button>
+                </div>
+              </form>
 
           </div>
 
@@ -705,7 +709,7 @@ Uparivanje sa hranom:
             <h4>Naše Usluge</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#events">Eventovi</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#book-a-table">Degustacije</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#contact">Degustacije</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#events">Proslave</a></li>
             </ul>
           </div>
@@ -737,6 +741,10 @@ Uparivanje sa hranom:
   <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="vendor/php-email-form/validate.js"></script>
   <script src="vendor/swiper/swiper-bundle.min.js"></script>
+
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  
+  
 
   <!-- Template Main JS File -->
   <script src="main.js"></script>
