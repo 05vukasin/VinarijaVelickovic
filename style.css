@@ -925,7 +925,7 @@ section {
 }
 
 .menu .menu-img {
-  width: 190px;
+  width: 170px;
   border-radius: 20px;
   float: left;
   border: 5px solid rgba(255, 255, 255, 0.2);
@@ -1732,18 +1732,8 @@ input[type="submit"] {
 
 /*meni------*/
 
-.menu-item{
-  display: inline-block;
-  margin-bottom: 20px;
-}
-.menu-ingredients{
-  margin-bottom: 20px;
-  max-height: 180px;
-  overflow: hidden;
-}
-.menu-ingredients::after{
-  max-height: fit-content;
-}
+
+
 .expand-text {
   cursor: pointer;
   color: #d3af71;
