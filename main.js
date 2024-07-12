@@ -349,6 +349,12 @@ document.getElementById('contact-form')
 
 function expandText(element) {
   const menuItem = element.closest('.menu-item');
-  menuItem.classList.toggle('expanded');
-}
+  const menuIngredients = menuItem.querySelector('.menu-ingredients');
 
+  // Promeni stilove za menu-ingredients
+  menuIngredients.style.maxHeight = 'fit-content';
+  menuIngredients.style.overflow = 'visible';
+
+  // Sakrij expand-text dugme
+  element.style.display = 'none';
+}
