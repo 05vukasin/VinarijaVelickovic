@@ -347,14 +347,24 @@ document.getElementById('contact-form')
 /**meni-------- */
 
 
-function expandText(element) {
-  const menuItem = element.closest('.menu-item');
-  const menuIngredients = menuItem.querySelector('.menu-ingredients');
+// Selektujemo sve elemente sa klasom expand-text
+const expandButtons = document.querySelectorAll('.expand-text');
 
-  // Promeni stilove za menu-ingredients
-  menuIngredients.style.maxHeight = 'fit-content';
-  menuIngredients.style.overflow = 'visible';
+// Iteriramo kroz sve dugmadi expand-text
+expandButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    const menuItem = this.closest('.menu-item'); // Pronalazimo najbliži roditeljski element sa klasom .menu-item
 
-  // Sakrij expand-text dugme
-  element.style.display = 'none';
-}
+    // Proveravamo da li menu-item ima klasu expanded
+    if (menuItem.classList.contains('expanded')) {
+      // Ako ima, uklanjamo klasu expanded (vraćamo na početno stanje)
+      menuItem.classList.remove('expanded');
+      this.innerText = 'Više...'; // Menjamo tekst dugmeta nazad na "Više..."
+    } else {
+      // Ako nema, dodajemo klasu expanded (proširujemo prikaz)
+      menuItem.classList.add('expanded');
+      this.innerText = 'Manje...'; // Menjamo tekst dugmeta na "Manje..."
+    }
+  });
+});
+
