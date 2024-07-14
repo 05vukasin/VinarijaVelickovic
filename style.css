@@ -1761,6 +1761,7 @@ input[type="submit"] {
 .menu-item.expanded  {
   width: 100%;
   height: auto;
+  border-radius: 5px;
   background-color: #0c0b09;
   color: #fff;
   padding: 10px;
@@ -1771,9 +1772,14 @@ input[type="submit"] {
   z-index: 9999;
   pointer-events: auto; /* Omogućava klik na proširenom stanju */
 }
+.menu-item.expanded .menu-img{
+  float:left;
+  width: 160px;
+  height: auto;
+}
 .menu-item.expanded .menu-ingredients{
   height: auto;
-  width: auto;
-  font-size: 20px;
+  font-size: 18px;
   color: #fff;
+  width: auto;
 }
