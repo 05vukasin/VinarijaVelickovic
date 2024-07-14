@@ -1769,7 +1769,7 @@ input[type="submit"] {
   position: absolute;
   top:10px;
   opacity: 1;
-  z-index: 9999;
+  z-index: 9999999;
   pointer-events: auto; /* Omogućava klik na proširenom stanju */
 }
 .menu-item.expanded .menu-img{
@@ -1780,6 +1780,35 @@ input[type="submit"] {
 .menu-item.expanded .menu-ingredients{
   height: auto;
   font-size: 18px;
+  display: flex;
+  flex-wrap: wrap;
   color: #fff;
   width: auto;
+}
+
+@media (max-width: 500px) {
+  .menu-item{
+    width: 95%;
+  }
+  .menu-item .menu-img{
+    width: 120px;
+  }
+  .menu-item .menu-ingredients{
+    height: 80px;
+  }
+  .menu-item.expanded .menu-ingredients{
+    height: auto;
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+    width: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .menu-item.expanded .menu-img{
+    float:left;
+    width: 80px;
+    height: auto;
+  }
 }

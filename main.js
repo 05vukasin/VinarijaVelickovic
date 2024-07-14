@@ -347,10 +347,13 @@ document.getElementById('contact-form')
 /**meni-------- */
 
 
+
+// Iteriramo kroz sve dugmadi expand-text
+// Selektujemo sve elemente sa klasom expand-text
 // Selektujemo sve elemente sa klasom expand-text
 const expandButtons = document.querySelectorAll('.expand-text');
 
-// Iteriramo kroz sve dugmadi expand-text
+// Iteriramo kroz sve dugmad expand-text
 expandButtons.forEach(button => {
   button.addEventListener('click', function() {
     const menuItem = this.closest('.menu-item'); // Pronalazimo najbliži roditeljski element sa klasom .menu-item
@@ -365,6 +368,25 @@ expandButtons.forEach(button => {
       menuItem.classList.add('expanded');
       this.innerText = 'Manje...'; // Menjamo tekst dugmeta na "Manje..."
     }
+
+    // Nakon promene stanja, osvežavamo raspored Isotope-a
+    menuIsotope.arrange();
   });
 });
 
+// Selektujemo glavni kontejner menija
+const menuContainer = document.querySelector('.menu-container');
+
+// Proveravamo da li smo uspešno selektovali kontejner
+if (menuContainer) {
+  // Inicijalizujemo Isotope za kontejner
+  const menuIsotope = new Isotope(menuContainer, {
+    itemSelector: '.menu-item',
+    layoutMode: 'fitRows'
+  });
+
+  // Osvežavamo AOS animacije nakon završetka postavljanja Isotope layout-a
+  menuIsotope.on('arrangeComplete', function() {
+    AOS.refresh();
+  });
+}
