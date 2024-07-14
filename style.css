@@ -491,6 +491,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .btns {
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   margin-top: 30px;
   margin-bottom: 10px;
 }
@@ -516,9 +519,6 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
-#hero .btn-book {
-  margin-left: 15px;
-}
 
 #hero .play-btn {
   width: 94px;
