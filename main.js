@@ -348,9 +348,6 @@ document.getElementById('contact-form')
 
 
 
-// Iteriramo kroz sve dugmadi expand-text
-// Selektujemo sve elemente sa klasom expand-text
-// Selektujemo sve elemente sa klasom expand-text
 const expandButtons = document.querySelectorAll('.expand-text');
 
 // Iteriramo kroz sve dugmad expand-text
@@ -371,6 +368,16 @@ expandButtons.forEach(button => {
 
     // Nakon promene stanja, osvežavamo raspored Isotope-a
     menuIsotope.arrange();
+
+    // Promena stilova za prošireni element
+    document.querySelector('.menu').style.overflow = 'visible';
+    document.querySelector('.menu').style.height = 'fit-content';
+    document.querySelector('.section-bg').style.overflow = 'visible';
+    document.querySelector('.section-bg').style.height = 'fit-content';
+    document.querySelector('.menu .container').style.overflow = 'visible';
+    document.querySelector('.menu .container').style.height = 'fit-content';
+    document.querySelector('.menu-container').style.overflow = 'visible';
+    document.querySelector('.menu-container').style.height = 'fit-content';
   });
 });
 

@@ -897,6 +897,9 @@ section {
   text-align: center;
   border-radius: 50px;
 }
+.menu{
+  overflow: visible;
+}
 
 .menu #menu-flters li {
   cursor: pointer;
@@ -1758,26 +1761,27 @@ input[type="submit"] {
   color: #fff;
 }
 
-.menu-item.expanded  {
-  width: 100%;
+.menu-item.expanded {
+  width: 55%;
   height: auto;
   border-radius: 5px;
   background-color: #0c0b09;
   color: #fff;
   padding: 10px;
   transition: 0.4s;
-  position: absolute;
-  top:10px;
+  position: relative; /* Promena iz absolute u relative */
   opacity: 1;
-  z-index: 9999999;
-  pointer-events: auto; /* Omogućava klik na proširenom stanju */
+  z-index: 9999;
+  margin-right: 10px;
 }
-.menu-item.expanded .menu-img{
-  float:left;
+
+.menu-item.expanded .menu-img {
+  float: left;
   width: 160px;
   height: auto;
 }
-.menu-item.expanded .menu-ingredients{
+
+.menu-item.expanded .menu-ingredients {
   height: auto;
   font-size: 18px;
   display: flex;
@@ -1785,10 +1789,10 @@ input[type="submit"] {
   color: #fff;
   width: auto;
 }
-
-@media (max-width: 500px) {
+@media (max-width: 1000px) {
   .menu-item{
     width: 95%;
+    z-index: 9;
   }
   .menu-item .menu-img{
     width: 120px;
@@ -1796,19 +1800,67 @@ input[type="submit"] {
   .menu-item .menu-ingredients{
     height: 80px;
   }
+  .menu-item.expanded{
+    width: 100%;
+  }
   .menu-item.expanded .menu-ingredients{
     height: auto;
+    width: 100%;
     font-size: 14px;
     display: flex;
     flex-wrap: wrap;
     color: #fff;
     width: auto;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-right: 10px;
+    z-index: 99999;
   }
+
   .menu-item.expanded .menu-img{
     float:left;
-    width: 80px;
+    width:70px;
     height: auto;
+  }
+}
+@media (max-width: 600px) {
+  .menu-item.expanded .menu-ingredients{
+    font-size: 11px;
+  }
+}
+
+
+.dopuna{
+  height: fit-content;
+  padding: 10px;
+}
+.dopuna img{
+  display: none;
+}
+.dopuna {
+  margin-top: 20px;
+  /* The image used */
+  background-image: url("img/image_123650291.JPG");
+
+  /* Set a specific height */
+  min-height: 400px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (max-width: 1200px) {
+  .dopuna{
+    min-height: 500px;
+  }
+}
+@media(max-width: 500px) {
+  .dopuna img{
+    display:block;
+    width: 100%;
+    height: auto;
+  }
+  .dopuna{
+    background-image: none;
   }
 }
