@@ -1864,3 +1864,17 @@ input[type="submit"] {
     background-image: none;
   }
 }
+.menu .menu-order-note {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 18px;
+  font-family: "Playfair Display", serif;
+  color: #fff;
+}
+.menu .menu-order-note a {
+  color: #cda45e;
+  text-decoration: underline;
+}
+.menu .menu-order-note a:hover {
+  color: #d9ba85;
+}
