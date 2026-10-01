@@ -171,37 +171,7 @@
     });
   }
 
-  /**
-   * Menu isotope and filter
-   */
-  window.addEventListener('load', () => {
-    let menuContainer = select('.menu-container');
-    if (menuContainer) {
-      let menuIsotope = new Isotope(menuContainer, {
-        itemSelector: '.menu-item',
-        layoutMode: 'fitRows'
-      });
-
-      let menuFilters = select('#menu-flters li', true);
-
-      on('click', '#menu-flters li', function(e) {
-        e.preventDefault();
-        menuFilters.forEach(function(el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
-
-        menuIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        menuIsotope.on('arrangeComplete', function() {
-          AOS.refresh()
-        });
-      }, true);
-    }
-
-  });
-
+  
   /**
    * Initiate glightbox 
    */
@@ -213,10 +183,10 @@
    * Events slider
    */
   new Swiper('.events-slider', {
-    speed: 600,
+    speed: 1100,
     loop: true,
     autoplay: {
-      delay: 5000,
+      delay: 7000,
       disableOnInteraction: false
     },
     slidesPerView: 'auto',
@@ -344,56 +314,3 @@ document.getElementById('contact-form')
     });
 });
 
-/**meni-------- */
-
-
-
-const expandButtons = document.querySelectorAll('.expand-text');
-
-// Iteriramo kroz sve dugmad expand-text
-expandButtons.forEach(button => {
-  button.addEventListener('click', function() {
-    const menuItem = this.closest('.menu-item'); // Pronalazimo najbliži roditeljski element sa klasom .menu-item
-
-    // Proveravamo da li menu-item ima klasu expanded
-    if (menuItem.classList.contains('expanded')) {
-      // Ako ima, uklanjamo klasu expanded (vraćamo na početno stanje)
-      menuItem.classList.remove('expanded');
-      this.innerText = 'Više...'; // Menjamo tekst dugmeta nazad na "Više..."
-    } else {
-      // Ako nema, dodajemo klasu expanded (proširujemo prikaz)
-      menuItem.classList.add('expanded');
-      this.innerText = 'Manje...'; // Menjamo tekst dugmeta na "Manje..."
-    }
-
-    // Nakon promene stanja, osvežavamo raspored Isotope-a
-    menuIsotope.arrange();
-
-    // Promena stilova za prošireni element
-    document.querySelector('.menu').style.overflow = 'visible';
-    document.querySelector('.menu').style.height = 'fit-content';
-    document.querySelector('.section-bg').style.overflow = 'visible';
-    document.querySelector('.section-bg').style.height = 'fit-content';
-    document.querySelector('.menu .container').style.overflow = 'visible';
-    document.querySelector('.menu .container').style.height = 'fit-content';
-    document.querySelector('.menu-container').style.overflow = 'visible';
-    document.querySelector('.menu-container').style.height = 'fit-content';
-  });
-});
-
-// Selektujemo glavni kontejner menija
-const menuContainer = document.querySelector('.menu-container');
-
-// Proveravamo da li smo uspešno selektovali kontejner
-if (menuContainer) {
-  // Inicijalizujemo Isotope za kontejner
-  const menuIsotope = new Isotope(menuContainer, {
-    itemSelector: '.menu-item',
-    layoutMode: 'fitRows'
-  });
-
-  // Osvežavamo AOS animacije nakon završetka postavljanja Isotope layout-a
-  menuIsotope.on('arrangeComplete', function() {
-    AOS.refresh();
-  });
-}
