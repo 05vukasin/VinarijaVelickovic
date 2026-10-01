@@ -158,3 +158,16 @@
     font-size: 14px;
   }
 }
+
+/* Desktop: popup tacno na sredini ekrana */
+@media (min-width: 601px) {
+  .popup {
+    align-items: flex-start;
+  }
+  .popup-content {
+    top: auto;
+    transform: none;
+    margin: auto;
+    max-height: calc(100vh - 40px);
+  }
+}

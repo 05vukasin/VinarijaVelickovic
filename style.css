@@ -1574,14 +1574,16 @@ input[type="submit"] {
 .menu .menu-order-note {
   margin-top: 30px;
   text-align: center;
-  font-size: 18px;
-  font-family: "Playfair Display", serif;
-  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: #000;
 }
 .menu .menu-order-note a {
-  color: #cda45e;
-  text-decoration: underline;
+  color: #d3af71;
+  font-weight: 800;
 }
 .menu .menu-order-note a:hover {
-  color: #d9ba85;
+  color: #cda45e;
+  text-decoration: underline;
 }
